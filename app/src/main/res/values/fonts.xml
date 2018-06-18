@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="roboto_regular" translatable="false">sans-serif</string>
+    <string name="roboto_medium" translatable="false">sans-serif-medium</string>
+    <string name="roboto_light" translatable="false">sans-serif-light</string>
+    <string name="roboto_condensed" translatable="false">sans-serif-condensed</string>
+    <string name="roboto_thin" translatable="false">sans-serif-thin</string>
+
+    <!-- General fonts -->
+    <string name="font_plus">\u0066</string>
+    <string name="font_menu_notifications_on">\u0071</string>
+    <string name="font_menu_notifications_off">\u0072</string>
+    <string name="font_holiday_home">\u0075</string>
+    <string name="font_holiday_plane">\u0076</string>
+    <string name="font_info">\u0077</string>
+    <string name="font_exclamation">\u0078</string>
+    <string name="font_left_arrow">\u0079</string>
+    <string name="font_right_arrow">\u007A</string>
+    <string name="font_up_arrow">\u0041</string>
+    <string name="font_down_arrow">\u0042</string>
+    <string name="font_tick_2">\u0044</string>
+    <string name="font_close">\u0045</string>
+    <string name="font_boost">\u0046</string>
+    <string name="font_copy">\u0048</string>
+    <string name="font_edit">\u0049</string>
+    <string name="font_reset">\u004B</string>
+    <string name="font_device_connected">\u004D</string>
+    <string name="font_frost">\u004E</string>
+    <string name="font_battery_empty">\u004F</string>
+    <string name="font_battery_low">\u0050</string>
+    <string name="font_battery_normal">\u0051</string>
+    <string name="font_battery_full">\u0052</string>
+    <string name="font_bars_0">\u0053</string>
+    <string name="font_bars_1">\u0054</string>
+    <string name="font_bars_2">\u0055</string>
+    <string name="font_bars_3">\u0056</string>
+    <string name="font_bars_4">\u0057</string>
+    <string name="font_flip">\u0065</string>
+    <string name="font_refresh">\u004B</string>
+</resources>

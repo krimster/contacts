@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Contacts</string>
+
+    <!-- Contact Data Types -->
+    <string name="contact_data_type_home">Home</string>
+    <string name="contact_data_type_work">Work</string>
+    <string name="contact_data_type_mobile">Mobile</string>
+    <string name="contact_data_type_other">Other</string>
+
+    <!-- Errors -->
+    <string name="error_occurred">An error occurred</string>
+    <string name="add_contacts">Add Contacts</string>
+
+    <!-- no contacts found -->
+    <string name="no_contacts_found_title">No contacts available</string>
+    <string name="no_contacts_found_text">There are no contacts available on your device</string>
+
+    <!-- permission denied -->
+    <string name="permission_denied_title">Permission Denied</string>
+    <string name="permission_denied_text">You have denied access to read your contacts</string>
+    <string name="close">Close</string>
+
+    <!-- contact details label -->
+    <string name="contact_name_label">Name</string>
+    <string name="email_label">Email</string>
+    <string name="number_label">Phone Number</string>
+
+</resources>

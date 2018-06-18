@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/icon_default"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/circle_light_grey"
+            android:tint="#f7f8f9"/>
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:srcCompat="@drawable/ic_contacts"
+            android:layout_gravity="center"
+            android:tint="#688189"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/permission_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="#29424c"
+        android:lineSpacingExtra="8sp"
+        android:gravity="center_horizontal"
+        android:text="@string/permission_denied_title"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/permission_denied_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/permission_title"
+        android:text="@string/permission_denied_text"
+        android:textColor="#33495b"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/add_contacts_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        style="@style/InvertButtonStyle"
+        android:layout_marginBottom="12dp"
+        android:text="@string/close"
+        tools:text="@string/close"/>
+
+</RelativeLayout>

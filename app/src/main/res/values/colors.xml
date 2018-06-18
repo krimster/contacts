@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Snack Bar color-->
+    <color name="snackbar_info_color">#ff2f444e</color>
+    <color name="snackbar_info_new_color">#0288D1</color>
+    <color name="snackbar_progress_color">#0277BD</color>
+    <color name="snackbar_warning_color">#FF312A</color>
+
+    <color name="app_error_color">#E6FF4444</color>
+
+    <color name="text_primary_colour">#29424c</color>
+
+    <color name="dark_blue">#ff2f444e</color>
+    <color name="off_gray">#b5c4c6</color>
+    <color name="light_white_off_gray">#E6E1E0</color>
+
+    <color name="sapphire">#3d61e8</color>
+
+    <color name="unselected">#D6E0DF</color>
+    <color name="selected">#1D2D31</color>
+    <color name="today">#EC6E05</color>
+    <color name="light_gray">#92A9A6</color>
+    <color name="light_gray2">#A7BBBD</color>
+    <color name="dark_gray">#1D2D31</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <color name="text_disabled">@color/unselected</color>
+
+    <color name="transparent">#00EEEEEE</color>
+    <color name="logo_colour">#ffff7a00</color>
+
+
+
+</resources>

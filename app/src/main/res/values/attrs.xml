@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ContactListView">
+        <attr name="idv_icon" format="reference" />
+        <attr name="idv_title" format="string|reference" />
+    </declare-styleable>
+
+</resources>
