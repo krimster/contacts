@@ -9,6 +9,7 @@ import com.annimon.stream.Optional;
 import com.erickrim.contacts.data.entity.ContactEntity;
 import com.erickrim.contacts.data.entity.ContactEntityData;
 import com.erickrim.contacts.data.entity.mapper.ContactEntityMapper;
+import com.erickrim.contacts.exceptions.ContactNotFoundException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -75,38 +76,27 @@ public class DeviceContactEntityRepositoryTest {
     }
 
     @Test
-    public void returnsContactEntity() {
-//        result = Arrays.asList(mContactEntity);
-//        given(mContentResolver.query(URI, null, null, null, null)).willReturn(mCursor);
-//        given(mCursor.moveToNext()).willReturn(Boolean.TRUE);
-//        given(mCursor.getCount()).willReturn(1);
-//        given(mCursor.getLong(mCursor.getColumnIndex(ContactsContract.Data.CONTACT_ID))).willReturn(CONTACT_ID);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME))).willReturn(DISPLAY_NAME);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME))).willReturn(FAMILY_NAME);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Nickname.NAME))).willReturn(NICKNAME);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME))).willReturn(GIVEN_NAME);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))).willReturn(PHONE_NUMBER);
-//        given(mCursor.getInt(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.TYPE))).willReturn(PHONE_NUMBER_TYPE);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Email.ADDRESS))).willReturn(EMAIL_ADDRESS);
-//        given(mCursor.getInt(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Email.TYPE))).willReturn(EMAIL_ADDRESS_TYPE);
-//        given(mCursor.getString(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI))).willReturn(PHOTO_URL);
-//        given(mPhoneContactEntityData.getDataType()).willReturn(PHONE_NUMBER_TYPE);
-//        given(mPhoneContactEntityData.getDataValue()).willReturn(PHONE_NUMBER);
-//        given(mContactEntityMapper.toContactEntity(CONTACT_ID, DISPLAY_NAME, DISPLAY_NAME, DISPLAY_NAME, DISPLAY_NAME, mPhoneContactEntityData, mEmailContactEntityData, DISPLAY_NAME))
-//                .willReturn(contactEntityOptional);
-//        given(contactEntityOptional.isPresent()).willReturn(true);
-//        given(contactEntityOptional.get()).willReturn(mContactEntity);
-//
-//        TestObserver<List<ContactEntity>> testObserver = mSut.getContactEntities().test();
-//
-//
-//        testObserver.awaitTerminalEvent();
-//        testObserver
-//                .assertNoErrors()
-//                .assertValueCount(1);
-//
-//        verify(mContactEntityMapper);
+    public void returnsContactIdAndDisplayName() {
+        result = Arrays.asList(mContactEntity);
+        given(mContentResolver.query(URI, null, null, null, null)).willReturn(mCursor);
+        given(mCursor.getCount()).willReturn(1);
+        given(mCursor.moveToNext()).willReturn(Boolean.TRUE);
+
+        mSut.getContactEntities().test();
+
+        verify(mCursor).getLong(mCursor.getColumnIndex(ContactsContract.Data.CONTACT_ID));
+        verify(mCursor).getLong(mCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
     }
 
+    @Test
+    public void returnsException() {
+        given(mContentResolver.query(URI, null, null, null, null)).willReturn(mCursor);
+        given(mCursor.getCount()).willReturn(0);
+
+        TestObserver<List<ContactEntity>> testObserver = mSut.getContactEntities().test();
+
+        testObserver.assertError(ContactNotFoundException.class);
+        testObserver.assertNotComplete();
+    }
 
 }
