@@ -34,7 +34,7 @@ public class ContactEntityMapperTest {
     }
 
     @Test
-    public void returnsContactEmptyWhenValidInput() {
+    public void returnsContactWhenValidInput() {
         Optional<ContactEntity> contactEntityOptional = mSut.toContactEntity(
                 123,
                 DISPLAY_NAME,
