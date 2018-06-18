@@ -31,18 +31,7 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class DeviceContactEntityRepositoryTest {
 
-    public static final Uri URI = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
-
-    public static final Long CONTACT_ID = 1234L;
-    public static final String DISPLAY_NAME = "display_name";
-    public static final String GIVEN_NAME = "given_name";
-    public static final String NICKNAME = "nickname";
-    public static final String FAMILY_NAME = "family_name";
-    public static final String PHONE_NUMBER = "07869555555";
-    public static final int PHONE_NUMBER_TYPE = 2;
-    public static final String EMAIL_ADDRESS = "contact@email.com";
-    public static final int EMAIL_ADDRESS_TYPE = 1;
-    public static final String PHOTO_URL = "http://photo/2";
+    private static final Uri URI = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
 
     @Mock
     private ContentResolver mContentResolver;
@@ -53,22 +42,7 @@ public class DeviceContactEntityRepositoryTest {
     @Mock
     private Cursor mCursor;
 
-    @Mock
-    private ContactEntityData mPhoneContactEntityData;
-
-    @Mock
-    private ContactEntityData mEmailContactEntityData;
-
-    @Mock
-    private ContactEntity mContactEntity;
-
-    @Mock
-    private List<ContactEntity> result = new ArrayList<>();
-
-    @Mock
-    Optional<ContactEntity> contactEntityOptional;
-
-    DeviceContactEntityRepository mSut;
+    private DeviceContactEntityRepository mSut;
 
     @Before
     public void setup() {
@@ -77,7 +51,6 @@ public class DeviceContactEntityRepositoryTest {
 
     @Test
     public void returnsContactIdAndDisplayName() {
-        result = Arrays.asList(mContactEntity);
         given(mContentResolver.query(URI, null, null, null, null)).willReturn(mCursor);
         given(mCursor.getCount()).willReturn(1);
         given(mCursor.moveToNext()).willReturn(Boolean.TRUE);
@@ -98,5 +71,4 @@ public class DeviceContactEntityRepositoryTest {
         testObserver.assertError(ContactNotFoundException.class);
         testObserver.assertNotComplete();
     }
-
 }
