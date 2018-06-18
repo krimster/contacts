@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/splash_animation" android:oneshot="false">
+    <item android:drawable="@drawable/ic_contacts" android:duration="530" />
+    <item android:drawable="@drawable/ic_person" android:duration="530" />
+    <item android:drawable="@drawable/ic_contacts" android:duration="530" />
+    <item android:drawable="@drawable/ic_person" android:duration="530" />
+    <item android:drawable="@drawable/ic_contacts" android:duration="530" />
+    <item android:drawable="@drawable/ic_person" android:duration="530" />
+</animation-list>
